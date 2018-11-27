@@ -16,84 +16,129 @@
     </div>
     <div class="Grid">
         <div class="Grid__text Grid__text--left">
-            <h3 class="Grid__text__title"></h3>
-            <p class="Grid__text__highlighted"></p>
+            <h3 class="Grid__text__title">IIFE</h3>
+            <p class="Grid__text__highlighted">key word: instant</p>
             <div class="Grid__text__definition">
-                <p></p>
+                <p>IIFE is a JavaScript function that runs as soon as it is defined <a href="https://developer.mozilla.org/en-US/docs/Glossary/IIFE">(source)</a></p>
             </div>
-            <pre></pre>
+            <pre>(function () { 
+    const name = "Ana";
+})();
+</pre>
             <div class="Grid__text__comparison">
-                <p></p>
-                <p></p>
+                <p>Like instant coffee where you just add water and your coffee is ready to
+                    drink, IIFE are functions that run immediately from the moment that you
+                    created them, there is no need to call them.
+                </p>
+                <p>Like the instant coffee, you get one cup, after you drink it, that's it. Same with
+                    IIFE, as it's an anonymous function, you can't call it again after. </p>
             </div>
+        </div>
+        <div class="Grid__image Grid__image--right">
+            <img src="dist/img/iife.png" alt="Image asociation with IIFE">
+        </div>
+    </div>
+    <div class="Grid">
+        <div class="Grid__text Grid__text--right">
+            <h3 class="Grid__text__title">Closure</h3>
+            <p class="Grid__text__highlighted">key word: access</p>
+            <div class="Grid__text__definition">
+                <p>A closure is a feature in JavaScript where an inner function has access to the outer (enclosing)
+                    function's variables — a scope chain <a href="https://medium.freecodecamp.org/javascript-closures-simplified-d0d23fa06ba4">(source)</a></p>
+                <p>For every closure we have three scopes:</p>
+                <ul>
+                    <li>Local Scope (Own scope)</li>
+                    <li>Outer Functions Scope</li>
+                    <li>Global Scope</li>
+                </ul>
+            </div>
+            <div class="Grid__text__comparison">
+                <p>Imagine the squirrel's house being the inner function; from there, the squirrel has access to the
+                    entire tree (which is like the outer function) so she can take the acorn (variable) if she wants to.
+                    She also have access to the rest of the forest(global scope).
+                </p>
+            </div>
+        </div>
+        <div class="Grid__image Grid__image--left">
+            <img src="dist/img/closure.png" alt="Image asociation with closure">
+        </div>
+    </div>
+    <div class="Grid">
+        <div class="Grid__text Grid__text--left">
+            <h3 class="Grid__text__title">Event bubbling</h3>
+            <p class="Grid__text__highlighted">key word: propagate</p>
+            <div class="Grid__text__definition">
+                <p>When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors <a href="https://javascript.info/bubbling-and-capturing">(source)</a></p>
+            </div>
+            <pre>&lt;form onclick = "alert('third')">FORM
+    &lt;div onclick = "alert('second')">DIV
+        &lt;button onclick = "alert('first')">Click me&lt;/button>
+    &lt;/div>
+&lt;/form>
+</pre>
+            <div class="Grid__text__comparison">
+                <p>Imagine a water drop touching the surface of the lake. This event (the drop touching the surface) is propagating, causeing ripples to appear. Same way, with bubbling, an event is handled first by the inner element (child) and then propagated to the outer elements (parents).</p>
+            </div>
+        </div>
+        <div class="Grid__image Grid__image--right">
+            <img src="dist/img/event_bubbling.png" alt="Image asociation with event bubbling">
+        </div>
+    </div>
+    <div class="Grid">
+        <div class="Grid__text Grid__text--right">
+            <h3 class="Grid__text__title">Hoisting</h3>
+            <p class="Grid__text__highlighted">key word: memory</p>
+            <div class="Grid__text__definition">
+                <p>Conceptually, for example, a strict definition of hoisting suggests that variable and function declarations are physically moved to the top of your code, but this is not in fact what happens. Instead, the variable and function declarations are put into memory during the compile phase, but stay exactly where you typed them in your code <a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting">(source)</a></p>
+            </div>
+            <pre>//Declaring the function on top, then calling it
+function myName(name) {
+    console.log("My name is " + name)
+}
+myName("Ana");
+                
+//Call the function first, then declare it
+myName("Ana");
+function myName(name) {
+    console.log("My name is " + name)
+}</pre>
+            <div class="Grid__text__comparison">
+                <p>Let's say you have a bowl with fruits, you can first eat (or use) whatever fruits you have, and then name them (declare what you have gotten) or you can name (declare) first all the fruits you have and then eat (use) them - this being the most recommended way if you want to be sure you don't screw things up.</p>
+            </div>
+        </div>
+        <div class="Grid__image Grid__image--left">
+            <img src="dist/img/hoisting.png" alt="Image asociation with closure">
+        </div>
+    </div>
+    <div class="Grid">
+        <div class="Grid__text Grid__text--left">
+            <h3 class="Grid__text__title">Prototype</h3>
+            <p class="Grid__text__highlighted">key word: inheritance</p>
+            <div class="Grid__text__definition">
+                <p>Nearly all objects in JavaScript are instances of <code>Object</code>; a typical object inherits properties (including methods) from <code>Object.prototype</code>, although these properties may be overridden <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype">(source)</a></p>
+            </div>
+            <pre>function Parent() { 
+    this.surname = "Smith";
+    this.nationality = "English";
+    this.eyeColor = "blue";
+}
+            
+function Child() {
+    this.firstName = "Mary";
+}
+            
+Child.prototype = new Parent();
 
-        </div>
-        <div class="Grid__image Grid__image--right">
-            <img src="" alt="">
-        </div>
-    </div>
-    <div class="Grid">
-        <div class="Grid__text Grid__text--right">
-            <h3 class="Grid__text__title"></h3>
-            <p class="Grid__text__highlighted"></p>
-            <div class="Grid__text__definition">
-                <p></p>
-            </div>
-            <pre></pre>
+Child.prototype.eyeColor
+//returns "blue"
+</pre>
             <div class="Grid__text__comparison">
-                <p></p>
-            </div>
-        </div>
-        <div class="Grid__image Grid__image--left">
-            <img src="" alt="">
-        </div>
-    </div>
-    <div class="Grid">
-        <div class="Grid__text Grid__text--left">
-            <h3 class="Grid__text__title"></h3>
-            <p class="Grid__text__highlighted"></p>
-            <div class="Grid__text__definition">
-                <p></p>
-            </div>
-            <pre></pre>
-            <div class="Grid__text__comparison">
-                <p></p>
+                <p>
+                </p>
             </div>
         </div>
         <div class="Grid__image Grid__image--right">
-            <img src="" alt="">
-        </div>
-    </div>
-    <div class="Grid">
-        <div class="Grid__text Grid__text--right">
-            <h3 class="Grid__text__title"></h3>
-            <p class="Grid__text__highlighted"></p>
-            <div class="Grid__text__definition">
-                <p></p>
-            </div>
-            <pre></pre>
-            <div class="Grid__text__comparison">
-                <p></p>
-            </div>
-        </div>
-        <div class="Grid__image Grid__image--left">
-            <img src="" alt="">
-        </div>
-    </div>
-    <div class="Grid">
-        <div class="Grid__text Grid__text--left">
-            <h3 class="Grid__text__title"></h3>
-            <p class="Grid__text__highlighted"></p>
-            <div class="Grid__text__definition">
-                <p></p>
-            </div>
-            <pre></pre>
-            <div class="Grid__text__comparison">
-                <p> </p>
-            </div>
-        </div>
-        <div class="Grid__image Grid__image--right">
-            <img src="" alt="">
+            <img src="dist/img/prototype.png" alt="Image asociation with event bubbling">
         </div>
     </div>
 </body>
