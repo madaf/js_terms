@@ -132,13 +132,114 @@ Child.prototype = new Parent();
 Child.prototype.eyeColor
 //returns "blue"
 </pre>
+        </div>
+        <div class="Grid__image Grid__image--right">
+            <img src="dist/img/prototype.png" alt="Image association with event prototype">
+        </div>
+    </div>
+    <h2 class="Header Header__subtitle">JavaScript Methods</h2>
+    <div class="Grid__text Grid__text--full">
+        <p>Let's imagine that we have the following array of objects:</p>
+        <pre>let jars = [
+    {
+        name: 'honey',
+        deadly: false,
+        small: false
+    },
+    {
+        name: 'salt',
+        deadly: false,
+        small: true
+    },
+    {
+        name: 'poison',
+        deadly: true,
+        small: true
+    },
+    {
+        name: 'pickels',
+        deadly: false,
+        small: false
+    }
+];</pre>
+    </div>
+    <div class="Grid">
+        <div class="Grid__text Grid__text--right">
+            <h3 class="Grid__text__title">find()</h3>
+            <div class="Grid__text__definition">
+                <p>The <code>find()</code> method returns the value of the first element in the provided array that satisfies the provided testing function.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find">(source)</a></p>
+            </div>
+            <pre>jars.find(jar => jar.small === true)</pre>
             <div class="Grid__text__comparison">
-                <p>
+                <p>Using <code>find()</code> to check if we have a jar that has the property small, will return the first object that matches our criteria, which is:
+                    <pre>{
+    name: 'salt',
+    deadly: false,
+    small: true
+}</pre>
+                </p>
+            </div>
+        </div>
+        <div class="Grid__image Grid__image--left">
+            <img src="dist/img/method_find.png" alt="Image containing four jars, using find() method to find 'small===true', returns 'salt'">
+        </div>
+    </div>
+    <div class="Grid">
+        <div class="Grid__text Grid__text--left">
+            <h3 class="Grid__text__title">filter()</h3>
+            <div class="Grid__text__definition">
+                <p>The <code>filter()</code> method creates a new array with all elements that pass the test implemented by the provided function.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">(source)</a></p>
+            </div>
+            <pre>jars.filter(jar => jar.small === true)</pre>
+            <div class="Grid__text__comparison">
+                <p>Using <code>filter()</code> to check if we have a jar that has the property small, will return an array with all the objects that match our criteria:
+                    <pre>[
+    {
+        name: 'salt',
+        deadly: false,
+        small: true
+    },
+    {
+        name: 'poison',
+        deadly: true,
+        small: true
+    }    
+]</pre>
                 </p>
             </div>
         </div>
         <div class="Grid__image Grid__image--right">
-            <img src="dist/img/prototype.png" alt="Image association with event prototype">
+            <img src="dist/img/method_filter.png" alt="Image containing four jars, using find() method to find 'small===true', returns 'salt'">
+        </div>
+    </div>
+    <div class="Grid">
+        <div class="Grid__text Grid__text--right">
+            <h3 class="Grid__text__title">every()</h3>
+            <div class="Grid__text__definition">
+                <p>The <code>every()</code> method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every">(source)</a></p>
+            </div>
+            <pre>jars.every(jar => jar.deadly === true)</pre>
+            <div class="Grid__text__comparison">
+                <p>We can use <code>every()</code> to check if all the jars have the property deadly. This will return <code>false</code>.</p>
+            </div>
+        </div>
+        <div class="Grid__image Grid__image--left">
+            <img src="dist/img/method_every.png" alt="Image containing four jars, using find() method to find 'small===true', returns 'salt'">
+        </div>
+    </div>
+    <div class="Grid">
+        <div class="Grid__text Grid__text--left">
+            <h3 class="Grid__text__title">some()</h3>
+            <div class="Grid__text__definition">
+                <p>The <code>some()</code> method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some">(source)</a></p>
+            </div>
+            <pre>jars.some(jar => jar.deadly === true)</pre>
+            <div class="Grid__text__comparison">
+                <p>Using <code>some()</code> to check if we have a jar that has the property deadly, will return <code>true</code>.</p>
+            </div>
+        </div>
+        <div class="Grid__image Grid__image--right">
+            <img src="dist/img/method_some.png" alt="Image containing four jars, using find() method to find 'small===true', returns 'salt'">
         </div>
     </div>
 </body>

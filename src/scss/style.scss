@@ -40,6 +40,7 @@ body {
     margin-bottom: 3rem;
     &__text{
         line-height: 1.6;
+        padding: 0.8rem;
         pre{
             color: $color_dark-blue;
             background: $color_grey-light;
@@ -67,6 +68,10 @@ body {
                 grid-column: 2/14;
                 order: 1;
             }
+        }
+        &--full{
+            max-width: 800px;
+            margin: auto;
         }
         &__title{
             color: $color_blue;
